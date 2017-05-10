@@ -12,7 +12,7 @@
 
   window.Drab = {
     run: function(drab_return_token, drab_session_token, broadcast_topic) {
-      this.Socket = widow.Socket
+      this.Socket = window.Socket
 
       this.drab_return_token = drab_return_token
       this.drab_session_token = drab_session_token
