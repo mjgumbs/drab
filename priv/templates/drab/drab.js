@@ -10,6 +10,8 @@
     return uuid
   }
 
+  var $ = window.JQuery
+
   window.Drab = {
     run: function(drab_return_token, drab_session_token, broadcast_topic) {
       this.Socket = window.Socket
