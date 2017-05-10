@@ -13,7 +13,7 @@
   window.Drab = {
     run: function(drab_return_token, drab_session_token, broadcast_topic) {
       this.Socket = window.Socket
-
+      console.log($)
       this.drab_return_token = drab_return_token
       this.drab_session_token = drab_session_token
       // this.set_drab_store_token(drab_store_token)
