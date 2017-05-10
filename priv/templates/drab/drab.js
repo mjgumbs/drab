@@ -9,10 +9,10 @@
     })
     return uuid
   }
-  
+
   window.Drab = {
     run: function(drab_return_token, drab_session_token, broadcast_topic) {
-      this.Socket = require("phoenix").Socket
+      this.Socket = widow.Socket
 
       this.drab_return_token = drab_return_token
       this.drab_session_token = drab_session_token
@@ -33,11 +33,11 @@
       this.socket = new this.Socket("<%= Drab.config.socket %>", {params: {__drab_return: drab_return_token}})
       this.socket.connect()
       this.channel = this.socket.channel("__drab:" + this.drab_topic, {})
-      
+
       this.channel.join()
-        .receive("error", function(resp) { 
-          // TODO: communicate it to user 
-          console.log("Unable to join the Drab Channel", resp) 
+        .receive("error", function(resp) {
+          // TODO: communicate it to user
+          console.log("Unable to join the Drab Channel", resp)
         })
         .receive("ok", function(resp) {
           // launch on_connect
@@ -71,7 +71,7 @@
         })
       })
     },
-    // 
+    //
     //   string - event name
     //   event_handler -  string - function name in Phoenix Commander
     //   payload: object - will be passed as the second argument to the Event Handler
@@ -82,9 +82,9 @@
         Drab.event_reply_table[reply_to] = execute_after
       }
       var message = {
-                      event: event_name, 
-                      event_handler_function: event_handler, 
-                      payload: payload, 
+                      event: event_name,
+                      event_handler_function: event_handler,
+                      payload: payload,
                       reply_to: reply_to
                     }
       this.channel.push("event", message)
@@ -114,8 +114,8 @@
     }
   }
 
-  <%= 
-    Enum.map(templates, fn template -> 
+  <%=
+    Enum.map(templates, fn template ->
       Drab.Template.render_template(template, [])
     end)
   %>
