@@ -33,7 +33,7 @@ defmodule Drab.Mixfile do
   defp elixirc_paths(_),     do: ["lib"]
 
   defp deps do
-    [{:phoenix, "~> 1.2"},
+    [{:phoenix, "~> 1.3"},
      {:phoenix_html, "~> 2.6"},
      {:phoenix_pubsub, "~> 1.0"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
@@ -58,8 +58,8 @@ defmodule Drab.Mixfile do
       maintainers: ["Tomek Gryszkiewicz"],
       licenses: ["MIT"],
       links: %{
-        "GitHub" => "https://github.com/grych/drab", 
-        "Docs with Examples" => "https://tg.pl/drab/docs", 
+        "GitHub" => "https://github.com/grych/drab",
+        "Docs with Examples" => "https://tg.pl/drab/docs",
         "Home" => "https://tg.pl/drab"
       }
     ]
